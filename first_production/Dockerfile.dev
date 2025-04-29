@@ -1,10 +1,15 @@
+#./Dockerfile.dev
 FROM node:lts-alpine
 
+# set the container working directory
 WORKDIR "/app"
 
+# copy and install dependencies
 COPY package.json .
 RUN npm install
 
+# copy file system for non-docker-compose
 COPY . .
 
+# run the app
 CMD ["npm", "run", "start"]
