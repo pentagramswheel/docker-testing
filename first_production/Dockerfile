@@ -11,6 +11,9 @@ RUN npm install
 # copy source code
 COPY . .
 
-# run production version of app
+# build production version of app
 RUN npm run build
 
+# run production version of app
+FROM nginx
+COPY --from=builder /app/build /usr/share/nginx/html
