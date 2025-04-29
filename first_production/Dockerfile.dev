@@ -11,5 +11,5 @@ RUN npm install
 # copy file system for non-docker-compose
 COPY . .
 
-# run the app
+# run development version of app
 CMD ["npm", "run", "start"]
